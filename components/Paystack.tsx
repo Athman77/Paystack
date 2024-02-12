@@ -35,8 +35,8 @@ const Paystack: React.FC = (): JSX.Element => {
 		currency: "KES",
 	};
 
-	const handleSubmit = async (e: React.FormEvent) => {
-		e.preventDefault()
+	const handleSubmit = async () => {
+		//e.preventDefault()
 	
 	
 		try {
