@@ -1,6 +1,7 @@
 // pages/api/sendEmail.ts
 import { NextApiRequest, NextApiResponse } from 'next';
-import sendEmail from '../../utils/nodemailer';
+import sendEmail from '../../../lib/mailer';
+
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
