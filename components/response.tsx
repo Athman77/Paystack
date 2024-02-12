@@ -7,10 +7,10 @@
   }
   
   export const SpringSalesMail = ({ userName = 'Mary' }: SpringMailProps) => (
-    <Html>
-      <Head />
+    <main>
+    
       <h1>Dear {userName},</h1>
-    </Html>
+    </main>
   )
   
   export default SpringSalesMail
