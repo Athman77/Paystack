@@ -84,7 +84,7 @@ const Paystack: React.FC = (): JSX.Element => {
   return (
     <div id="paymentForm">
       <div className="form-group">
-        <label htmlFor="email">Email Address</label>
+        <label onClick={handleSubmit} htmlFor="email">Email Address</label>
         <input
           type="email"
           id="email-address"
