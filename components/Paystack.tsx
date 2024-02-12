@@ -46,7 +46,7 @@ const Paystack: React.FC = (): JSX.Element => {
           name,
           email,
         }),
-        mode: "no-cors",
+        
       });
     } catch (error) {
       console.log(error);

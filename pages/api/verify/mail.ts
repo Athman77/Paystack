@@ -1,51 +1,52 @@
-import nodemailer from 'nodemailer'
+import { NextApiRequest, NextApiResponse } from 'next';
+import { resolve } from 'path';
 
-
-
-
-export async function POST(req: Request) {
-  const { name, email } = await req.json()
-
-  
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  require('dotenv').config();
+  const nodemailer = require('nodemailer');
 
   const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    port: 465,
+    host: 'smtp.gmail.com',
     auth: {
       user: process.env.GMAIL_USER,
       pass: process.env.GMAIL_PASSWORD,
     },
-    tls: {
-      rejectUnauthorized: false,
-    },
-  })
+    secure: true,
+  });
 
-  const mailOptions = {
-    from: "athmangaucho77@gmail.com",
-    to: email,
-    subject: "Spring flower sales💐 Don't miss out!",
-   // html: emailHtml,
+  const attachmentPath = resolve('./public/vercel.svg');
+
+  const mailData = {
+    from: 'athmangauho77@gmail.com',
+    to: 'athmangaucho11@gmail.com', // Change this to req.body.email if needed
+    subject: `Message From Usman SnapFx`,
+    attachments: [
+      {
+        filename: 'vercel.svg', // Set a desired filename
+        path: attachmentPath,
+      },
+    ],
+  };
+
+  try {
+    const info = await new Promise((resolve, reject) => {
+      transporter.sendMail(mailData, function (err: any, info: unknown) {
+        if (err) {
+          console.log(err);
+          reject(err);
+        } else {
+          console.log(info);
+          resolve(info);
+        }
+      });
+    });
+
+    res.status(200).json({ status: 'OK', info });
+  } catch (error) {
+    res.status(500).json({ status: 'Error' });
   }
-
-  if (!name || !email) {
-    return new Response(
-      JSON.stringify({ message: 'Please submit your name and email' }),
-      { status: 400 }
-    )
-  }
-
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.error(error)
-      return new Response(
-        JSON.stringify({ message: 'Error: Could not send email' }),
-        { status: 400 }
-      )
-    }
-
-    console.log('Email sent: ' + info.response)
-    return new Response(
-      JSON.stringify({ message: 'Email sent successfully' }),
-      { status: 200 }
-    )
-  })
 }
+
+
+
