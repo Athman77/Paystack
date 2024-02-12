@@ -14,6 +14,7 @@
 		"node-fetch": "latest",
 		"nodemailer": "^6.7.2",
 		"react": "latest",
+		"dotenv": "^16.0.0",
 		"react-icons": "^4.9.0",
 		"@react-email/render": "^0.0.7",
 		"react-dom": "latest",
