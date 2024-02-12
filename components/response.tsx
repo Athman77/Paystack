@@ -1,17 +1,4 @@
-import {
-    Html,
-    Head,
-    Preview,
-    Body,
-    Container,
-    Link,
-    Img,
-    Text,
-    Section,
-    Hr,
-    Row,
-    Column,
-  } from '@react-email/components'
+
   
   // configure assest folder based on node environment
   //const baseUrl = process.env.VERCEL_URL ? `${process.env.VERCEL_URL}` : '/static'
@@ -22,100 +9,7 @@ import {
   export const SpringSalesMail = ({ userName = 'Mary' }: SpringMailProps) => (
     <Html>
       <Head />
-      <Preview>Brighten up your home for less!</Preview>
-      <Body style={main}>
-        <Container style={parentContainer}>
-          <Link href='#' style={headingLink}>
-            Petal Palace
-          </Link>
-          <Section style={heroSection}>
-          { /* <Img src={`${baseUrl}/banner.png`} style={banner} />*/}
-            <Link href='#' style={cta}>
-              Get 33% off sale
-            </Link>
-          </Section>
-          <Container style={container}>
-            <Text style={paragraph}>Dear {userName},</Text>
-            <Text style={paragraph}>
-              Spring is in full swing, and what better way to celebrate the season
-              of new beginnings than with fresh flowers? Our beautiful collection
-              of blooms is now available at discounted prices that you don't want
-              to miss!
-            </Text>
-            <Section style={storeLinks}>
-              <Link href='#' style={secondaryCTA}>
-                View Sales
-              </Link>
-              <Link href='#' style={secondaryCTA}>
-                View Store
-              </Link>
-            </Section>
-            <Section>
-              <Text style={sectionHeading}>Popular Flower Bundles</Text>
-              <Section>
-                <Link href='#'>
-                  <Row>
-                    <Column align='left'>
-                      <Img
-                        src={`${baseUrl}/plant.jpg`}
-                        width='145'
-                        height='120'
-                        alt='Karupu Plant'
-                        style={plantImg}
-                      />
-                    </Column>
-                    <Column style={plantCopy}>
-                      <Text style={plantName}>Karupu Plant</Text>
-                      <Text>
-                        This plant is a rare breed and grows up to 1-5 meters.
-                      </Text>
-                    </Column>
-                  </Row>
-                </Link>
-              </Section>
-              <Hr style={{ margin: '1.5rem 0' }} />
-              <Section style={socialLinks}>
-                <Row>
-                  <Column align='left'>
-                    <Link href='#' style={socialIcon}>
-                      <Img
-                        src={`${baseUrl}/twitter.png`}
-                        height='19'
-                        width='19'
-                      />
-                    </Link>
-                  </Column>
-                  <Column align='center'>
-                    <Link href='#' style={socialIcon}>
-                      <Img
-                        src={`${baseUrl}/instagram.png`}
-                        height='19'
-                        width='19'
-                      />
-                    </Link>
-                  </Column>
-                  <Column align='right'>
-                    <Link href='#' style={socialIcon}>
-                      <Img src={`${baseUrl}/mail.png`} height='19' width='19' />
-                    </Link>
-                  </Column>
-                </Row>
-              </Section>
-              <Section style={unsubscribe}>
-                <Link href='#' style={link}>
-                  Unsubscribe
-                </Link>
-                <Text style={paragraph}>
-                  Want to hear from us again?{' '}
-                  <Link href='#' style={link}>
-                    Click here
-                  </Link>
-                </Text>
-              </Section>
-            </Section>
-          </Container>
-        </Container>
-      </Body>
+      <h1>Dear {userName},</h1>
     </Html>
   )
   
