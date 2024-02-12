@@ -37,7 +37,7 @@ const Paystack: React.FC = (): JSX.Element => {
 
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault()
-		setIsSending(true)
+	
 	
 		try {
 		  const response = await fetch('http://127.0.0.1:3000/api/verify/mail', {
