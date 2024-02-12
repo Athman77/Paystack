@@ -49,6 +49,18 @@ const Paystack: React.FC = (): JSX.Element => {
 			setSurname("");
 			console.log("gauchooooo")
 		}
+		
+    // Send email on successful payment
+    const emailText = `Payment successful. Reference: ${reference.reference}`;
+    try {
+      await axios.post('/api/verify/pay', {
+        to: email,
+        subject: 'Payment Success',
+        text: emailText,
+      });
+    } catch (error) {
+      console.error('Error sending email:', error);
+    }
 	};
 
 	const onClose = () => {

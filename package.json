@@ -12,6 +12,7 @@
 		"node-fetch": "latest",
 		"react": "latest",
 		"react-dom": "latest",
+		"nodemailer": "^6.7.2",
 		"react-paystack": "latest"
 	},
 	"devDependencies": {
