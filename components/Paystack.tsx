@@ -35,7 +35,25 @@ const Paystack: React.FC = (): JSX.Element => {
 		currency: "KES",
 	};
 
+	const handleSubmit = async (e: React.FormEvent) => {
+		e.preventDefault()
+		setIsSending(true)
 	
+		try {
+		  const response = await fetch('http://127.0.0.1:3000/api/verify/mail', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({
+			  name,
+			  email,
+			}),
+			mode: 'no-cors',
+		  })
+		} catch (error) {
+		  console.log(error)
+		  alert('Something went wrong. Please try again.')
+		} 
+	  }
 
 	const onSuccess = async (reference: referenceObj) => {
 		const res = await fetch(`/api/verify/${reference.reference}`);
@@ -54,7 +72,10 @@ const Paystack: React.FC = (): JSX.Element => {
 	const onClose = () => {
 		alert("Payment cancelled.");
 		console.log("Payment successfully completed");
+		handleSubmit()
 	};
+
+
 
 	const componentProps = {
         ...config,
