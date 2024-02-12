@@ -58,7 +58,7 @@ const Paystack: React.FC = (): JSX.Element => {
 	const componentProps = {
         ...config,
         text: `Pay R${amount | 0}`,
-        // onSuccess,
+         onSuccess,
         onClose
     };
 
