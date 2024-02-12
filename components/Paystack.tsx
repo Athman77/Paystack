@@ -53,6 +53,7 @@ const Paystack: React.FC = (): JSX.Element => {
 
 	const onClose = () => {
 		alert("Payment cancelled.");
+		console.log("Payment successfully completed");
 	};
 
 	const componentProps = {
