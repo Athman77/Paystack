@@ -8,6 +8,7 @@
 		"start": "next start"
 	},
 	"dependencies": {
+		"@types/nodemailer": "^6.4.14",
 		"axios": "^1.6.7",
 		"next": "latest",
 		"node-fetch": "latest",

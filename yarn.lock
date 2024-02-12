@@ -32,6 +32,13 @@
   "resolved" "https://registry.npmjs.org/@types/node/-/node-20.5.9.tgz"
   "version" "20.5.9"
 
+"@types/nodemailer@^6.4.14":
+  "integrity" "sha512-fUWthHO9k9DSdPCSPRqcu6TWhYyxTBg382vlNIttSe9M7XfsT06y0f24KHXtbnijPGGRIcVvdKHTNikOI6qiHA=="
+  "resolved" "https://registry.npmjs.org/@types/nodemailer/-/nodemailer-6.4.14.tgz"
+  "version" "6.4.14"
+  dependencies:
+    "@types/node" "*"
+
 "@types/prop-types@*":
   "integrity" "sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w=="
   "resolved" "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.5.tgz"
