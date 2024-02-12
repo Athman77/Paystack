@@ -1,12 +1,12 @@
 import nodemailer from 'nodemailer'
-import { render } from '@react-email/render'
-import SpringSalesMail from '../../../components/response'
+
+
 
 
 export async function POST(req: Request) {
   const { name, email } = await req.json()
 
-  const emailHtml = render(SpringSalesMail({ userName: name }))
+  
 
   const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -23,7 +23,7 @@ export async function POST(req: Request) {
     from: "athmangaucho77@gmail.com",
     to: email,
     subject: "Spring flower sales💐 Don't miss out!",
-    html: emailHtml,
+   // html: emailHtml,
   }
 
   if (!name || !email) {
