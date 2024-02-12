@@ -32,7 +32,7 @@ const Paystack: React.FC = (): JSX.Element => {
 		label: name + " " + surname,
 		amount: (amount * 100) | 0,
 		publicKey: process.env.PAYSTACK_PUBLIC_TEST_KEY as string,
-		currency: "ZAR",
+		currency: "KES",
 	};
 
 	
@@ -47,6 +47,7 @@ const Paystack: React.FC = (): JSX.Element => {
 			setAmount(0);
 			setName("");
 			setSurname("");
+			console.log("gauchooooo")
 		}
 	};
 
